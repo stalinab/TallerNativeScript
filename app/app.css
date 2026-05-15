@@ -1,5 +1,91 @@
-﻿@import '@nativescript/theme/css/core.css';
-@import '@nativescript/theme/css/default.css';
+﻿.action-bar {
+    background-color: #6750A4;
+    color: #FFFFFF;
+}
 
-/* Place any CSS rules you want to apply on both iOS and Android here.
-This is where the vast majority of your CSS code goes. */
+/* ListView Cards */
+.card {
+    margin: 8 16;
+    padding: 16;
+    background-color: #FEF7FF;
+    border-radius: 12;
+    border-color: #EADDFF;
+    border-width: 1;
+}
+
+.avatar {
+    width: 40;
+    height: 40;
+    background-color: #EADDFF;
+    color: #4F378B;
+    text-align: center;
+    border-radius: 20;
+    vertical-align: middle;
+}
+
+.text-container {
+    margin-left: 16;
+    vertical-align: center;
+}
+
+.title {
+    font-size: 16;
+    font-weight: bold;
+    color: #1D1B20;
+}
+
+.subtitle {
+    font-size: 14;
+    color: #49454F;
+}
+
+.delete-btn {
+    font-size: 20;
+    vertical-align: center;
+    padding: 10;
+}
+
+/* Floating Action Button */
+.fab {
+    background-color: #6750A4;
+    color: white;
+    font-size: 28;
+    width: 56;
+    height: 56;
+    border-radius: 28;
+    margin: 16;
+    horizontal-align: right;
+}
+
+/* Formularios */
+.form-container {
+    padding: 24;
+}
+
+.input-label {
+    font-size: 14;
+    color: #49454F;
+    margin-bottom: 4;
+    margin-top: 16;
+}
+
+.input-field {
+    border-bottom-width: 1;
+    border-bottom-color: #6750A4;
+    padding: 8;
+    font-size: 16;
+}
+
+.switch-field {
+    horizontal-align: left;
+    margin-top: 8;
+    margin-bottom: 24;
+}
+
+.btn-primary {
+    background-color: #6750A4;
+    color: white;
+    border-radius: 20;
+    height: 40;
+    font-weight: bold;
+}
