@@ -1,10 +1,5 @@
-<Page navigatingTo="onNavigatingTo" xmlns="http://schemas.nativescript.org/tns.xsd">
-    
-    <ActionBar>
-        <Label text="Home" />
-    </ActionBar>
-
-    <GridLayout>
-        <!-- Add your page content here -->
-    </GridLayout>
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <StackLayout id="container" verticalAlignment="center" height="100%">
+        <Label id="dynamicLabel" text="Loading..." fontSize="24" textAlignment="center" fontWeight="bold"/>
+    </StackLayout>
 </Page>

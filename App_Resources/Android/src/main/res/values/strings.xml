@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TallerApp</string>
+    <string name="title_activity_kimera">TallerApp</string>
+    
+    <string name="dynamic_text">Texto A - Español Portrait</string>
+</resources>
