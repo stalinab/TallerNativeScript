@@ -2,13 +2,13 @@
     <ActionBar title="{{ isUpdate ? 'Editar Elemento' : 'Nuevo Elemento' }}" class="action-bar" />
     
     <StackLayout class="form-container">
-        <Label text="Título" class="input-label" />
-        <TextField text="{{ title }}" hint="Ingresa el título" class="input-field" />
+        <Label text="Título del producto" class="input-label" />
+        <TextField text="{{ title }}" hint="Ej: Teclado Mecánico" class="input-field" />
         
-        <Label text="Subtítulo" class="input-label" />
-        <TextField text="{{ subtitle }}" hint="Ingresa el subtítulo" class="input-field" />
+        <Label text="Descripción" class="input-label" />
+        <TextField text="{{ subtitle }}" hint="Ej: Switch red" class="input-field" />
         
-        <Label text="Estado Activo" class="input-label" />
+        <Label text="¿Disponible en inventario?" class="input-label" />
         <Switch checked="{{ isActive }}" class="switch-field" />
         
         <Button text="Guardar" tap="onSave" class="btn-primary" />

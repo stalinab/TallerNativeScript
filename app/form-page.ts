@@ -6,7 +6,7 @@ export function onNavigatingTo(args: EventData) {
     const page = <Page>args.object;
     const navigationContext = page.navigationContext;
 
-    // Determinamos si es Create o Update
+    // Detectamos si recibimos un item (Update) o está vacío (Create)
     if (navigationContext && navigationContext.item) {
         pageContext = fromObject({
             isUpdate: true,
@@ -27,6 +27,6 @@ export function onNavigatingTo(args: EventData) {
 }
 
 export function onSave() {
-    // Aquí iría la lógica de guardado en el Array si fuera necesario
+    // Al ser un Mock-CRUD, solo simulamos guardado y regresamos
     Frame.topmost().goBack();
 }

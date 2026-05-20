@@ -3,7 +3,7 @@
     color: #FFFFFF;
 }
 
-/* ListView Cards */
+/* Material 3 Card Style */
 .card {
     margin: 8 16;
     padding: 16;
@@ -41,23 +41,21 @@
 
 .delete-btn {
     font-size: 20;
-    vertical-align: center;
     padding: 10;
 }
 
-/* Floating Action Button */
+/* Material 3 Floating Action Button (FAB) */
 .fab {
     background-color: #6750A4;
     color: white;
     font-size: 28;
     width: 56;
     height: 56;
-    border-radius: 28;
+    border-radius: 16; /* M3 FABs son más cuadrados, no circulos perfectos */
     margin: 16;
     horizontal-align: right;
 }
 
-/* Formularios */
 .form-container {
     padding: 24;
 }
@@ -65,8 +63,8 @@
 .input-label {
     font-size: 14;
     color: #49454F;
-    margin-bottom: 4;
     margin-top: 16;
+    margin-bottom: 4;
 }
 
 .input-field {

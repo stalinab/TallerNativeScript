@@ -1,17 +1,15 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
-    <ActionBar title="Mock CRUD" class="action-bar" />
+    <ActionBar title="Mock CRUD Nativo" class="action-bar" />
     
     <GridLayout rows="*, auto">
         <ListView row="0" items="{{ items }}" itemTap="onItemTap" separatorColor="transparent">
             <ListView.itemTemplate>
                 <GridLayout columns="auto, *, auto" class="card">
                     <Label col="0" text="IMG" class="avatar" />
-                    
                     <StackLayout col="1" class="text-container">
                         <Label text="{{ title }}" class="title" />
                         <Label text="{{ subtitle }}" class="subtitle" />
                     </StackLayout>
-                    
                     <Label col="2" text="🗑️" class="delete-btn" tap="onDeleteTap" />
                 </GridLayout>
             </ListView.itemTemplate>
