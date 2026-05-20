@@ -1,9 +1,19 @@
 import { EventData, Page, Application, Utils, Frame, ObservableArray, fromObject } from '@nativescript/core';
 
-// Datos estáticos requeridos por la guía
+// 1. Array estático CON IMÁGENES (URLs)
 const itemsList = new ObservableArray([
-    { id: 1, title: "Google Pixel 8", subtitle: "Android 14" },
-    { id: 2, title: "MacBook Pro", subtitle: "Apple M3" }
+    { 
+        id: 1, 
+        title: "Google Pixel 8", 
+        subtitle: "Android 14",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/500px-Android_robot.svg.png" 
+    },
+    { 
+        id: 2, 
+        title: "MacBook Pro", 
+        subtitle: "Apple M3",
+        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/500px-Apple_logo_black.svg.png" 
+    }
 ]);
 
 export function onNavigatingTo(args: EventData) {
@@ -12,40 +22,37 @@ export function onNavigatingTo(args: EventData) {
 }
 
 export function onAddTap() {
-    Frame.topmost().navigate("form-page"); // Navega a Create
+    Frame.topmost().navigate("form-page");
 }
 
 export function onItemTap(args: any) {
     const item = itemsList.getItem(args.index);
     Frame.topmost().navigate({
         moduleName: "form-page",
-        context: { item: item } // Pasamos los datos para Update
+        context: { item: item }
     });
 }
 
-// ⚠️ EL RETO NATIVO: Diálogo y Toast 100% Android ⚠️
+// 2. EL RETO NATIVO: Dialog y Toast sin abstracciones
 export function onDeleteTap(args: EventData) {
     const view = <any>args.object;
     const item = view.bindingContext;
     const index = itemsList.indexOf(item);
 
     if (Application.android) {
-        // 1. Obtenemos el Activity de Android actual
         const activity = Application.android.foregroundActivity;
         
-        // 2. Instanciamos la clase de Java directamente en TS
+        // Instancia directa de la clase Java
         const builder = new android.app.AlertDialog.Builder(activity);
         builder.setTitle("Confirmar Eliminación");
         builder.setMessage(`¿Deseas eliminar "${item.title}"?`);
         
-        // 3. Listener nativo para el botón positivo
         builder.setPositiveButton("Eliminar", new android.content.DialogInterface.OnClickListener({
             onClick: function (dialog, which) {
-                // Borramos del array estático
                 itemsList.splice(index, 1);
                 
-                // 4. Instanciamos el Toast nativo
                 const context = Utils.android.getApplicationContext();
+                // Instancia directa del Toast nativo
                 android.widget.Toast.makeText(
                     context, 
                     "Elemento eliminado exitosamente", 

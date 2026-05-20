@@ -14,13 +14,11 @@
 }
 
 .avatar {
-    width: 40;
-    height: 40;
+    width: 50;
+    height: 50;
+    border-radius: 25; /* Lo hace completamente circular */
     background-color: #EADDFF;
-    color: #4F378B;
-    text-align: center;
-    border-radius: 20;
-    vertical-align: middle;
+    margin-right: 10;
 }
 
 .text-container {

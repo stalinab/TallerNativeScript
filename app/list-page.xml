@@ -4,17 +4,20 @@
     <GridLayout rows="*, auto">
         <ListView row="0" items="{{ items }}" itemTap="onItemTap" separatorColor="transparent">
             <ListView.itemTemplate>
-                <GridLayout columns="auto, *, auto" class="card">
-                    <Label col="0" text="IMG" class="avatar" />
+                <GridLayout columns="auto, *, auto" class="card" android-elevation="2">
+                    
+                    <Image col="0" src="{{ image }}" stretch="aspectFill" class="avatar" />
+                    
                     <StackLayout col="1" class="text-container">
                         <Label text="{{ title }}" class="title" />
                         <Label text="{{ subtitle }}" class="subtitle" />
                     </StackLayout>
+                    
                     <Label col="2" text="🗑️" class="delete-btn" tap="onDeleteTap" />
                 </GridLayout>
             </ListView.itemTemplate>
         </ListView>
 
-        <Button row="1" text="+" tap="onAddTap" class="fab" />
+        <Button row="1" text="+" tap="onAddTap" class="fab" android-elevation="6" />
     </GridLayout>
 </Page>
